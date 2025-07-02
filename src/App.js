@@ -16,13 +16,11 @@ function App() {
 
   const fetchTasks = async (token) => {
     const response = await fetch(
-      `https://to-do-listbackend-edpc.onrender.com/tasks/${id}/status`,
-
+      "https://to-do-listbackend-edpc.onrender.com/tasks",
       {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
-    
     const data = await response.json();
     console.log("Fetched tasks:", data);
     // Ensure tasks is always an array
@@ -41,7 +39,7 @@ function App() {
 
   const addTask = async (text) => {
     const response = await fetch(
-      "https://to-do-listbackend-edpc.onrender.com//tasks",
+      "https://to-do-listbackend-edpc.onrender.com/tasks",
       {
         method: "POST",
         headers: {
@@ -112,7 +110,6 @@ function App() {
               href="#"
               className="px-4 py-2 rounded-full font-semibold transition-colors duration-200 hover:bg-orange-600 hover:text-white focus:bg-orange-700 focus:outline-none bg-orange-100 text-orange-700 shadow-sm"
             >
-              {" "}
               Home
             </a>
           </li>
@@ -214,7 +211,7 @@ function App() {
         </ul>
       </main>
       <footer className="bg-orange-500 text-white p-4 mt-auto text-center shadow-inner">
-        © 2025 MADE BY JIYA
+        © 2025 Your To-Do App
       </footer>
     </div>
   );
