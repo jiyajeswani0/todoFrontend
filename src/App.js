@@ -22,6 +22,7 @@ function App() {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
+    
     const data = await response.json();
     console.log("Fetched tasks:", data);
     // Ensure tasks is always an array
